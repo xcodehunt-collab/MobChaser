@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
         LinearLayout bar = new LinearLayout(this); bar.setGravity(Gravity.CENTER_VERTICAL);
         TextView h = text(title, 35); h.setAllCaps(false); h.setTypeface(Typeface.create("sans", Typeface.create(Typeface.DEFAULT, Typeface.NORMAL).getStyle()));
         bar.addView(h, new LinearLayout.LayoutParams(0, dp(66),1));
-        Button b = new Button(this); b.setText(drawer ? "→" : "⌕"); b.setTextSize(24); b.setTextColor(light?Color.BLACK:Color.WHITE); b.setBackgroundColor(Color.TRANSPARENT); b.setOnClickListener(v -> drawer ? showDrawer() : showSearch());
+        Button b = new Button(this); b.setText(drawer ? "→" : "⌕"); b.setTextSize(24); b.setTextColor(light?Color.BLACK:Color.WHITE); b.setBackgroundColor(Color.TRANSPARENT); b.setOnClickListener(v -> { if (drawer) showDrawer(); else showSearch(); });
         bar.addView(b,new LinearLayout.LayoutParams(dp(56),dp(56))); root.addView(bar);
     }
 
